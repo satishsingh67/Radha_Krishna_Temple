@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+	id="WebApp_ID" version="3.1">
+	<display-name>Temple Website</display-name>
+	<welcome-file-list>
+		<welcome-file>./static/index.html</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>TempleAction</servlet-name>
+		<servlet-class>com.temple.action.TempleAction</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AdminLogin</servlet-name>
+		<servlet-class>com.temple.action.AdminLogin</servlet-class>
+	</servlet>
+
+
+	<servlet>
+		<servlet-name>AdminCreateAccount</servlet-name>
+		<servlet-class>com.temple.action.AdminCreateAccount</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>AddDonner</servlet-name>
+		<servlet-class>com.temple.action.AddDonner</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>AddExpense</servlet-name>
+		<servlet-class>com.temple.action.AddExpense</servlet-class>
+	</servlet>
+
+	<servlet>
+		<servlet-name>Notice</servlet-name>
+		<servlet-class>com.temple.action.Notice</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>TempleAction</servlet-name>
+		<url-pattern>/templeAction</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>AdminCreateAccount</servlet-name>
+		<url-pattern>/admin</url-pattern>
+	</servlet-mapping>
+
+
+
+	<servlet-mapping>
+		<servlet-name>AdminLogin</servlet-name>
+		<url-pattern>/adminLogin</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AddDonner</servlet-name>
+		<url-pattern>/donation</url-pattern>
+	</servlet-mapping>
+
+	<servlet-mapping>
+		<servlet-name>AddExpense</servlet-name>
+		<url-pattern>/expense</url-pattern>
+	</servlet-mapping>
+
+
+	<servlet-mapping>
+		<servlet-name>Notice</servlet-name>
+		<url-pattern>/notice</url-pattern>
+	</servlet-mapping>
+
+
+</web-app>
