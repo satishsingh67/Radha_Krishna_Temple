@@ -1,194 +1,218 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./css/header.css">
-    <link rel="stylesheet" href="./css/test.css">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./css/header.css" />
+        <link rel="stylesheet" href="./css/test.css" />
 
-    
-    <title>Radhe Krishna Temple</title>
-    
-     <style media="screen">
+        <title>Radhe Krishna Temple</title>
 
-.row {
-   display: flex;
-   overflow: hidden;
-  }
+        <style media="screen">
+            .row {
+                display: flex;
+                overflow: hidden;
+            }
 
-.imagegroup {
-   display: flex;
-   width: 100%;
-   height:300px;
-  }
+            .imagegroup {
+                display: flex;
+                width: 100%;
+                height: 300px;
+            }
 
-.imagegroup img{
-  flex-shrink: 0;
-  object-fit: cover;
-  border: 3px solid white;
+            .imagegroup img {
+                flex-shrink: 0;
+                object-fit: cover;
+                border: 3px solid white;
+            }
+
+            .imagegroup {
+                animation: travel 20s ease-in-out infinite;
+            }
+
+            @keyframes travel {
+                0%,
+                100% {
+                    transform: translate3d(0, 0, 0);
+                }
+                50% {
+                    transform: translate3d(-25%, 0, 0);
+                }
+            }
+            
+             .loader2 {
+  border: 16px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 16px solid blue;
+  border-bottom: 16px solid blue;
+  width: 50px;
+  height: 50px;
+  -webkit-animation: spin 1s linear infinite;
+  animation: spin 1s linear infinite;
 }
 
-.imagegroup {
-   animation: travel 20s ease-in-out infinite;
-  }
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(360deg); }
+}
 
-@keyframes travel {
-   0%, 100% {
-      transform: translate3d(0,0,0);
-    }
-   50% {
-      transform: translate3d(-25%,0,0);
-    }
- }
-
-  </style>
-</head>
-<body>
-
-    <header class="header">
-        <h1 class="text-center brand_text">Radha Krishna Temple</h1>
-        <div class="header-item item-center">
-          <div class="menu-overlay">
-          </div>
-          <ul class="nav">
-            <li class="nav-item">
-              <a class="nav-link active" href="#aboutUs">About Us</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#notice">Notice</a>
-            </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./fundManagement.html" target="_blank">Fund Management</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="./adminLogin.jsp" target="_blank">Admin Login</a>
-              </li>
-              <li class="nav-item">
-              <a class="nav-link" href="#contactUs">Contact Us</a>
-            </li>
-          </ul>
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+            
+        </style>
+    </head>
+    <body>
+        <header class="header">
+            <h1 class="text-center brand_text">Radha Krishna Temple</h1>
+            <div class="header-item item-center">
+                <div class="menu-overlay"></div>
+                <ul class="nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#aboutUs">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#notice">Notice</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./fundManagement.html" target="_blank">Fund Management</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="./adminLogin.jsp" target="_blank">Admin Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contactUs">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
         </header>
-    
-       
-<div class="row small">
-    <div class="imagegroup" style="animation-delay: 1s;">
-        <img src="./images/radhaKrishnaImage.jpg" alt="">
-       <img src="./images/temple_image1.jpg" alt="">
-       <img src="./images/temple_image2.jpg" alt="">
-       <img src="./images/temple_image3.jpg" alt="">
-       <img src="./images/temple_image4.jpg" alt=""> 
-    </div>
-  </div>
-
-      <br>
-<br>
-<h1 class="heading" id="notice"> <span>NOTICE</span> </h1>
-
-<div  style="overflow-y: scroll;height:200px;">
-
-<div class="row" id="noticeBoard" style="width: 95%;margin-left: 4%;">
-  </div>
-</div>
-<br>
-
-        <section class="about" id="aboutUs" style="background-image: url(./images/Untitled\ design\ \(2\).png);background-size:cover;  background-repeat: no-repeat;
-        background-position: center;
-      ">
-        <h1 class="heading"> <span>ABOUT TEMPLE</span> </h1>
-      
-        <div class="row">
-      
-            <div class="image">
-                <img src="./images/Untitled design (3).png" alt="">
+                
+        <div class="row small">
+            <div class="imagegroup" style="animation-delay: 1s;">
+                <img src="./images/radhaKrishnaImage.jpg" alt="" />
+                <img src="./images/temple_image1.jpg" alt="" />
+                <img src="./images/temple_image2.jpg" alt="" />
+                <img src="./images/temple_image3.jpg" alt="" />
+                <img src="./images/temple_image4.jpg" alt="" />
             </div>
-      
-            <div class="content1">
-               <p class="cse-text">
-               Shri Radha Krishna temple is situated in the east direction around 200 mtrs from sahlaur bazar .
-This temple is under construction and slated to be ready by 2025.
-The temple place is known as Radhe nager from the day of bhumi pujan which was scheduled on 23rd November 2023. 
-
-The land which was donated to shiv mandir Sahlaur by our ancestors, has been selected for Shri Radha Krishna temple construction with the consent of our villagers .
-                  </p>
-               
-            </div>
-      
         </div>
-      
-      </section>
 
-      <section id="contactUs">
-        <div class="container">
-          <h1 class="heading"> <span>Conatct Us</span> </h1>
-      
-          <div class="row align-items-center">
-             <div class="col-md-6">
-                <li style="font-size:18px;"><a href="#" ><i class="fas fa-map-marker-alt text-danger"></i>Radhe Nagar, Sahlour, Siwan, Bihar 841227</a></li>
-                <li style="font-size: 18px;"><a href="#"> <i class="fas fa-phone text-danger"></i> Phone : 9663900233 , 7008119620 , 8018353004</a></li>
-                <li style="font-size: 18px;"><a href="#"> <i class="fas fa-envelope-square text-danger"></i> Email :radhakrishnamandir.sahlaur@gmail.com</a></li>
-             </div>
-             <div class="col-md-6">
-              <p>
-                <iframe style="height:300px;margin-left: -10;" src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21906.2053392409!2d84.44727507437696!3d26.198720358350478!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3992e535d24fe45d%3A0x232b5aef61ddd4ee!2sShri%20Radha%20Krishna%20Mandir%20Sahlaur!5e0!3m2!1sen!2sin!4v1704634323184!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-                 </p>
+        <br />
+        <br />
+        <h1 class="heading" id="notice"><span>NOTICE</span></h1>
+
+        <div style="overflow-y: scroll; height: 200px;">
+            <div class="row" id="noticeBoard" style="width: 95%; margin-left: 4%;">
+                    <div style="position: absolute;top: 80%;left: 48%;">
+                    <div class="loader2"  id="myLoader">
+                    </div>
+               </div> 
+                <h5 style="position: absolute;top: 88%;left: 40%;color: rgb(30, 169, 224); letter-spacing: 5px;font-size: 18px;">Loading Notices ,Please wait....
+                      </h5>
             </div>
-          </div>
-      
-      
-      </section>
-<div style="text-align: center;margin-bottom: 2%;background-color: antiquewhite;height:10%;">
+        </div>
+        <br />
 
-<h4 style="font-size: medium;text-decoration:dashed;">Developed By : Satish Singh</h4>
+        <section class="about" id="aboutUs" style="background-image: url(./images/Untitled\design\\(2\).png); background-size: cover; background-repeat: no-repeat; background-position: center;">
+            <h1 class="heading"><span>ABOUT TEMPLE</span></h1>
 
+            <div class="row">
+                <div class="image">
+                    <img src="./images/Untitled design (3).png" alt="" />
+                </div>
 
-</div>
-      <script>
-      $(document).ready(function(){
+                <div class="content1">
+                    <p class="cse-text">
+                        Shri Radha Krishna temple is situated in the east direction around 200 mtrs from sahlaur bazar . This temple is under construction and slated to be ready by 2025. The temple place is known as Radhe nager from the day
+                        of bhumi pujan which was scheduled on 23rd November 2023. The land which was donated to shiv mandir Sahlaur by our ancestors, has been selected for Shri Radha Krishna temple construction with the consent
+                        of our villagers .
+                    </p>
+                </div>
+            </div>
+        </section>
 
-    	  fetchNoticeForAdmin();
-  
-    	  
-    	  
-      });
-      
-      function fetchNoticeForAdmin(){
-	  	  $.ajax({
-	  	      type: "GET",
-	  	      url:"/Temple_Website/notice?action=getNotice",
-	  	    	 success: function (data, textStatus, jqXHR) {	    
-	  	    	  $('#noticeBoard').empty();
-	  		    	 if(data === "No Records"){
-	  			     $("#noticeBoard").html('<tr class="no-records"><td colspan="9" style="text-align:center;text-color:black">Sorry,No record found.</td></tr>');
-	  		    	 }else{
-	  					  var JsonData= jQuery.parseJSON(data);
-	  	          $(JsonData).each(function (index, item) {  
-	  	        	  $("#noticeBoard").append(
-	  	        		'	<div class="col-sm-6">'+
-	  	        	     ' <div class="card">'+
-	  	        	      '  <div class="card-body">'+
-	  	        	      '    <h4 class="card-title"><b>'+item.createTime+'<br>'+item.noticeTitle+'</b></h4>'+
-	  	        	       '   <p class="card-text" style="font-size:13px;"><textarea rows="4" cols="90" readonly>'+item.noticeDescription+'</textarea ></p>'+
-	  	        	      '    <a  target="_blank" href="/Temple_Website/notice?action=download&noticeId='+item.pkNoticeId+'" class="btn btn-primary">View</a>'+
-	  	        	      '  </div>'+
-	  	        	     ' </div>'+
-	  	        	   ' </div>'
-	  	        	       
-	  	        	  );
-	  		      });
-	  	      }
-	  	      },
-	  	      error: function (jqXHR, textStatus, errorThrown) {
-	  		  
-	  	      }
-	  	    });
+        <section id="contactUs">
+            <div class="container">
+                <h1 class="heading"><span>Conatct Us</span></h1>
 
-	  };
-      
-      </script>
+                <div class="row align-items-center">
+                    <div class="col-md-6">
+                        <li style="font-size: 18px;">
+                            <a href="#"><i class="fas fa-map-marker-alt text-danger"></i>Radhe Nagar, Sahlour, Siwan, Bihar 841227</a>
+                        </li>
+                        <li style="font-size: 18px;">
+                            <a href="#"> <i class="fas fa-phone text-danger"></i> Phone : 9663900233 , 7008119620 , 8018353004</a>
+                        </li>
+                        <li style="font-size: 18px;">
+                            <a href="#"> <i class="fas fa-envelope-square text-danger"></i> Email :radhakrishnamandir.sahlaur@gmail.com</a>
+                        </li>
+                    </div>
+                    <div class="col-md-6">
+                        <p>
+                            <iframe
+                                style="height: 300px; margin-left: -10;"
+                                src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21906.2053392409!2d84.44727507437696!3d26.198720358350478!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3992e535d24fe45d%3A0x232b5aef61ddd4ee!2sShri%20Radha%20Krishna%20Mandir%20Sahlaur!5e0!3m2!1sen!2sin!4v1704634323184!5m2!1sen!2sin"
+                                width="600"
+                                height="450"
+                                style="border: 0;"
+                                allowfullscreen=""
+                                loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"
+                            ></iframe>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <div style="text-align: center; margin-bottom: 2%; background-color: antiquewhite; height: 10%;">
+            <h4 style="font-size: medium; text-decoration: dashed;">Developed By : Satish Singh</h4>
+        </div>
+        <script>
+            $(document).ready(function () {
+                fetchNoticeForAdmin();
+            });
 
-</body>
+            function fetchNoticeForAdmin() {
+                $.ajax({
+                    type: "GET",
+                    url: "/Temple_Website/notice?action=getNotice",
+                    success: function (data, textStatus, jqXHR) {
+                        $("#noticeBoard").empty();
+                        if (data === "No Records") {
+                            $("#noticeBoard").html('<tr class="no-records"><td colspan="9" style="text-align:center;text-color:black">Sorry,No record found.</td></tr>');
+                        } else {
+                            var JsonData = jQuery.parseJSON(data);
+                            $(JsonData).each(function (index, item) {
+                                $("#noticeBoard").append(
+                                    '	<div class="col-sm-6">' +
+                                        ' <div class="card">' +
+                                        '  <div class="card-body">' +
+                                        '    <h4 class="card-title"><b>' +
+                                        item.createTime +
+                                        "<br>" +
+                                        item.noticeTitle +
+                                        "</b></h4>" +
+                                        '   <p class="card-text" style="font-size:13px;"><textarea rows="4" cols="90" readonly>' +
+                                        item.noticeDescription +
+                                        "</textarea ></p>" +
+                                        '    <a  target="_blank" href="/Temple_Website/notice?action=download&noticeId=' +
+                                        item.pkNoticeId +
+                                        '" class="btn btn-primary">View</a>' +
+                                        "  </div>" +
+                                        " </div>" +
+                                        " </div>"
+                                );
+                            });
+                        }
+                    },
+                    error: function (jqXHR, textStatus, errorThrown) {},
+                });
+            }
+        </script>
+    </body>
 </html>
