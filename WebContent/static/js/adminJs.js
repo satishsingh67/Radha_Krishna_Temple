@@ -6,6 +6,7 @@ menuicn.addEventListener("click", () => {
 });
 
 $(document).ready(function () {
+    var baseUrl="https://srktsahlaur.com";
 
     $("#adminMainPanel").empty();
     mangeNotice();
@@ -16,7 +17,7 @@ $(document).ready(function () {
     });
 
     $("#logout").click(function () {
-        window.location.href = "/Temple_Website/adminLogin?action=logout";
+        window.location.href = baseUrl+"/adminLogin?action=logout";
     });
 
     $("#donationBoard").click(function () {

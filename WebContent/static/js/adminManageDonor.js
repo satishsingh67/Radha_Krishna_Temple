@@ -1,3 +1,5 @@
+var baseUrl="https://srktsahlaur.com";
+
 //Add Donation
 $(document).on("click", "#uploadDonation", function () {
     $("#donationHeader").text("Add Donation");
@@ -95,7 +97,7 @@ function fetchDonationForAdmin(searchTitle) {
 
     $.ajax({
         type: "GET",
-        url: "/Temple_Website/donation?action=getDonation&isFromAdmin=yes&donnerName=" + searchTitle,
+        url: baseUrl+"/donation?action=getDonation&isFromAdmin=yes&donnerName=" + searchTitle,
         success: function (data, textStatus, jqXHR) {
             $("#adminDonationTable").empty();
             if (data === "No Records") {
@@ -170,7 +172,7 @@ function deleteDonor(donnerId) {
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
-        url: "/Temple_Website/donation",
+        url: baseUrl+"/donation",
         data: form_data,
         processData: false,
         contentType: false,
@@ -222,7 +224,7 @@ $("#submitDonationForm").click(function (event) {
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
-        url: "/Temple_Website/donation",
+        url: baseUrl+"/donation",
         data: data,
         processData: false,
         contentType: false,
@@ -250,5 +252,5 @@ $("#submitDonationForm").click(function (event) {
 });
 
 function downloadDonation(id) {
-    window.open("/Temple_Website/donation?action=download&donnerId=" + id, "_blank");
+    window.open("/donation?action=download&donnerId=" + id, "_blank");
 }

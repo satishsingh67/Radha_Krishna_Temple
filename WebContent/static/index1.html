@@ -147,11 +147,12 @@
             $(document).ready(function () {
                 fetchNoticeForAdmin();
             });
+            var baseUrl="https://srktsahlaur.com";
 
             function fetchNoticeForAdmin() {
                 $.ajax({
                     type: "GET",
-                    url: "/Temple_Website/notice?action=getNotice",
+                    url: baseUrl+"/notice?action=getNotice",
                     success: function (data, textStatus, jqXHR) {
                         $("#noticeBoard").empty();
                         if (data === "No Records") {

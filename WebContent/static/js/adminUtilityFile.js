@@ -1,3 +1,4 @@
+var baseUrl="https://srktsahlaur.com";
 function fetchNoticeForAdmin(searchTitle) {
 	
     if (searchTitle == undefined || searchTitle == null) {
@@ -6,7 +7,7 @@ function fetchNoticeForAdmin(searchTitle) {
 
     $.ajax({
         type: "GET",
-        url: "/Temple_Website/notice?action=getNotice&isFromAdmin=yes&noticeTitle=" + searchTitle,
+        url: baseUrl+"/notice?action=getNotice&isFromAdmin=yes&noticeTitle=" + searchTitle,
         success: function (data, textStatus, jqXHR) {
             $("#adminNotceTable").empty();
             if (data === "No Records") {
@@ -69,7 +70,7 @@ function deleteNotice(noticeIds) {
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
-        url: "/Temple_Website/notice",
+        url: baseUrl+"/notice",
         data: form_data,
         processData: false,
         contentType: false,
@@ -127,7 +128,7 @@ $("#submitNotice").click(function (event) {
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
-        url: "/Temple_Website/notice",
+        url: baseUrl+"/notice",
         data: data,
         processData: false,
         contentType: false,
@@ -157,5 +158,5 @@ $("#submitNotice").click(function (event) {
 });
 
 function myFunction(id) {
-    window.open("/Temple_Website/notice?action=download&noticeId=" + id, "_blank");
+    window.open("/notice?action=download&noticeId=" + id, "_blank");
 }

@@ -1,3 +1,5 @@
+var baseUrl="https://srktsahlaur.com";
+
 function fetchExpenseForFundManagementPage() {
     /*	 $('#myModal').show();
 	  	//Calling Loader
@@ -6,13 +8,13 @@ function fetchExpenseForFundManagementPage() {
 
     $.ajax({
         type: "GET",
-        url: "/Temple_Website/expense?action=getExpense",
+        url: baseUrl+"/expense?action=getExpense",
         success: function (data, textStatus, jqXHR) {
             $("#fundManagementExpenseTable").empty();
             if (data === "No Records") {
                 $("#expensSpanId").text("");
                 $("#expensSpanId").text(" Total Records: 0");
-                $("#adminExpenseTable").html('<tr class="no-records"><td colspan="11" style="text-align:center;text-color:black">Sorry,No record found.</td></tr>');
+                $("#fundManagementExpenseTable").html('<tr class="no-records"><td colspan="11" style="text-align:center;text-color:black">Sorry,No record found.</td></tr>');
             } else {
                 var JsonData = jQuery.parseJSON(data);
                 $("#expensSpanId").text("");
@@ -74,7 +76,7 @@ function fetchExpenseForFundManagementPage() {
 }
 
 function downloadExpenseFormFundmanagement(id) {
-    window.open("/Temple_Website/expense?action=download&expenseId=" + id, "_blank");
+    window.open("/expense?action=download&expenseId=" + id, "_blank");
 }
 
 $("#donationSearchFund").on("input", function () {
@@ -114,7 +116,7 @@ function fetchDonationForFundManagement(searchTitle) {
 
     $.ajax({
         type: "GET",
-        url: "/Temple_Website/donation?action=getDonation&donnerName=" + searchTitle,
+        url: baseUrl+"/donation?action=getDonation&donnerName=" + searchTitle,
         success: function (data, textStatus, jqXHR) {
             $("#fundManagementDonationTable").empty();
             if (data === "No Records") {
@@ -180,7 +182,7 @@ function fetchDonationForFundManagement(searchTitle) {
 	*/
         },
         error: function (jqXHR, textStatus, errorThrown) {
-            $("#fundManagementDonationTable").html('<tr class="no-records"><td colspan="11" style="text-align:center;text-color:black">Sorry, Something went wrong,Please try again.</td></tr>');
+            $("#fundManagementDonationTable").html('<tr class="no-records"><td colspan="13" style="text-align:center;text-color:black">Sorry, Something went wrong,Please try again.</td></tr>');
             $("#myModal").hide();
             //Calling Loader
             $(".loader1").hide();
@@ -191,13 +193,13 @@ function fetchDonationForFundManagement(searchTitle) {
 }
 
 function downloadDonationFund(id) {
-    window.open("/Temple_Website/donation?action=download&donnerId=" + id, "_blank");
+    window.open("/donation?action=download&donnerId=" + id, "_blank");
 }
 
 function getFundDetails() {
     $.ajax({
         type: "GET",
-        url: "/Temple_Website/donation?action=getFundDetails",
+        url: baseUrl+"/donation?action=getFundDetails",
         success: function (data, textStatus, jqXHR) {
             var JsonData = jQuery.parseJSON(data);
             $("#fundRecivedId").text("");

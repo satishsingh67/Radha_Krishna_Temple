@@ -22,6 +22,12 @@
                 display: flex;
                 width: 100%;
                 height: 300px;
+                
+            }
+            .responsive {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
             }
 
             .imagegroup img {
@@ -31,7 +37,8 @@
             }
 
             .imagegroup {
-                animation: travel 20s ease-in-out infinite;
+                animation: travel 10s ease-in-out infinite;
+                
             }
 
             @keyframes travel {
@@ -40,7 +47,7 @@
                     transform: translate3d(0, 0, 0);
                 }
                 50% {
-                    transform: translate3d(-25%, 0, 0);
+                    transform: translate3d(-400%, 0, 0);
                 }
             }
             
@@ -94,11 +101,11 @@
                 
         <div class="row small">
             <div class="imagegroup" style="animation-delay: 1s;">
-                <img src="./images/radhaKrishnaImage.jpg" alt="" />
-                <img src="./images/temple_image1.jpg" alt="" />
-                <img src="./images/temple_image2.jpg" alt="" />
-                <img src="./images/temple_image3.jpg" alt="" />
-                <img src="./images/temple_image4.jpg" alt="" />
+                <img src="./images/radhaKrishnaImage.jpg" class="responsive" alt="" />
+                <img src="./images/temple_image1.jpg" class="responsive" alt="" />
+                <img src="./images/temple_image2.jpg" class="responsive" alt="" />
+                <img src="./images/temple_image3.jpg" class="responsive" alt="" />
+                <img src="./images/temple_image4.jpg" class="responsive" alt="" />
             </div>
         </div>
 
@@ -177,10 +184,12 @@
                 fetchNoticeForAdmin();
             });
 
+            var baseUrl="https://srktsahlaur.com";
+
             function fetchNoticeForAdmin() {
                 $.ajax({
                     type: "GET",
-                    url: "/Temple_Website/notice?action=getNotice",
+                    url: baseUrl+"/notice?action=getNotice",
                     success: function (data, textStatus, jqXHR) {
                         $("#noticeBoard").empty();
                         if (data === "No Records") {
@@ -197,10 +206,10 @@
                                         "<br>" +
                                         item.noticeTitle +
                                         "</b></h4>" +
-                                        '   <p class="card-text" style="font-size:13px;"><textarea rows="4" cols="90" readonly>' +
+                                        '   <p class="card-text" style="font-size:13px;"><textarea rows="4" cols="90" style="box-sizing: border-box;max-width: 100%;" readonly>' +
                                         item.noticeDescription +
                                         "</textarea ></p>" +
-                                        '    <a  target="_blank" href="/Temple_Website/notice?action=download&noticeId=' +
+                                        '    <a  target="_blank" href="/notice?action=download&noticeId=' +
                                         item.pkNoticeId +
                                         '" class="btn btn-primary">View</a>' +
                                         "  </div>" +

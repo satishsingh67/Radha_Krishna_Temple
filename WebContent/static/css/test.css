@@ -565,6 +565,11 @@ footer span a:hover{
 
 
 /* responsive media query start */
+@media (max-width:700px) {
+  .row {   
+    flex-direction: column;
+  }
+}
 @media (max-width: 1104px) {
     .about .about-content .left img{
         height: 350px;
@@ -777,4 +782,3 @@ footer span a:hover{
     flex-flow: column;
     text-align: center;
   }
-}

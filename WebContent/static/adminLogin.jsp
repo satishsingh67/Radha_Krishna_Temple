@@ -240,6 +240,9 @@
         </div>
 
         <script>
+        
+        var baseUrl="https://srktsahlaur.com";
+
             $("#loginClear").click(function (event) {
                 event.preventDefault();
                 $("#adminLogin")[0].reset();
@@ -257,7 +260,7 @@
                 $.ajax({
                     type: "POST",
                     enctype: "multipart/form-data",
-                    url: "/Temple_Website/adminLogin",
+                    url: baseUrl+"/adminLogin",
                     data: data,
                     processData: false,
                     contentType: false,

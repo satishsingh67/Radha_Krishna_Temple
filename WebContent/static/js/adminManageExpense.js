@@ -1,3 +1,5 @@
+var baseUrl="https://srktsahlaur.com";
+
 //Add Expense
 $(document).on("click", "#uploadExpenses", function () {
     $("#expanseHeader").text("Add Expense");
@@ -87,7 +89,7 @@ function fetchExpenseForAdmin(searchTitle) {
 
     $.ajax({
         type: "GET",
-        url: "/Temple_Website/expense?action=getExpense&isFromAdmin=yes&expenseName=" + searchTitle,
+        url: baseUrl+"/expense?action=getExpense&isFromAdmin=yes&expenseName=" + searchTitle,
         success: function (data, textStatus, jqXHR) {
             $("#adminExpenseTable").empty();
             if (data === "No Records") {
@@ -158,7 +160,7 @@ function deleteExpense(expenseId) {
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
-        url: "/Temple_Website/expense",
+        url: baseUrl+"/expense",
         data: form_data,
         processData: false,
         contentType: false,
@@ -210,7 +212,7 @@ $("#submitExpense").click(function (event) {
     $.ajax({
         type: "POST",
         enctype: "multipart/form-data",
-        url: "/Temple_Website/expense",
+        url: baseUrl+"/expense",
         data: data,
         processData: false,
         contentType: false,
@@ -238,5 +240,5 @@ $("#submitExpense").click(function (event) {
 });
 
 function downloadExpense(id) {
-    window.open("/Temple_Website/expense?action=download&expenseId=" + id, "_blank");
+    window.open("/expense?action=download&expenseId=" + id, "_blank");
 }

@@ -7,6 +7,7 @@ import java.util.Map;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -47,10 +48,13 @@ public class AdminLogin extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		if (StringUtils.isNotBlank(action) && StringUtils.equalsIgnoreCase(action, "logout")) {
-
 			session.removeAttribute("admin");
 			session.setAttribute("logoutStatus", "success");
-			response.sendRedirect("./static/adminLogin.jsp");
+			Cookie cookie = new Cookie("JSESSIONID", null);	
+			response.addCookie(cookie);
+			session.invalidate();
+			String baseUrl ="https://srktsahlaur.com/static/adminLogin.jsp";
+			response.sendRedirect(baseUrl);
 		}
 
 	}
@@ -79,9 +83,18 @@ public class AdminLogin extends HttpServlet {
 
 			if (result != null && !result.isEmpty() && result.size() > 0) {
 				if ((boolean) result.get("status")) {
-					out.print("/Temple_Website/static/adminPage.jsp");
 					HttpSession session = request.getSession();
+					if (request.getParameter("JSESSIONID") != null) {
+					    Cookie userCookie = new Cookie("JSESSIONID", request.getParameter("JSESSIONID"));
+					    response.addCookie(userCookie);
+					} else {
+					    String sessionId = session.getId();
+					    Cookie userCookie = new Cookie("JSESSIONID", sessionId);
+					    response.addCookie(userCookie);
+					}
 					session.setAttribute("user", (Admin) result.get("admin"));
+					out.print("/static/adminPage.jsp");
+					
 				} else {
 					out.print(result.get("message"));
 				}

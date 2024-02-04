@@ -7,7 +7,8 @@
     
 Admin user=(Admin)session.getAttribute("user");
 if(user==null){
-	response.sendRedirect("adminLogin.jsp");
+	String baseUrl ="https://srktsahlaur.com/static/adminLogin.jsp";
+	response.sendRedirect(baseUrl);
 	return;
 } 
     
