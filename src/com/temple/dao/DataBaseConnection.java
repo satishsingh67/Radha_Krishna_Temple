@@ -9,11 +9,10 @@ public class DataBaseConnection {
 		Connection con=null;
 			try {
 				Class.forName("com.mysql.cj.jdbc.Driver");
-				Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/radha_krishana_temple","root","Laxmi@1234");
+				Connection conn=DriverManager.getConnection("jdbc:mysql://localhost:3306/radha_krishana_temple","root","root");
 				return conn;
 			}
 			catch(Exception e) {
-				System.out.println(e);
 				return null;
 			
 			}
